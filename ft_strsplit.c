@@ -6,7 +6,7 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:45:34 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/11 10:58:55 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:12:31 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	int		ft_count_world(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	n = 0;
+	n = 1;
 	while (s[i])
 	{
 		if (i == 0 && s[i] != c)
@@ -40,7 +40,7 @@ static	char	*ft_split_word(char const *s, char c)
 	return (ft_strsub(s, 0, i));
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**split;
 	size_t	i;
@@ -50,7 +50,7 @@ char	**ft_strsplit(char const *s, char c)
 	n = 0;
 	if (!s || !c)
 		return (NULL);
-	if(!(split = (char**)malloc((ft_count_world(s, c) + 1) * (sizeof(char**)))))
+	if (!(split = (char**)malloc(ft_count_world(s, c) * (sizeof(char**)))))
 		return (NULL);
 	while (s[i])
 	{

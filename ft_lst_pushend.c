@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lst_pushend.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 20:27:08 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/13 14:11:06 by czalewsk         ###   ########.fr       */
+/*   Created: 2016/11/13 12:10:53 by czalewsk          #+#    #+#             */
+/*   Updated: 2016/11/13 12:18:50 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lst_pushend(t_list **alst, t_list *new)
 {
-	unsigned int	l;
-	char			*str;
+	t_list		*addr;
 
-	l = 0;
-	if (s == NULL || f == NULL || !(str = ft_strdup(s)))
-		return (NULL);
-	while (str[l])
+	if (!new)
+		return ;
+	else if (!(*alst))
+		*alst = new;
+	else
 	{
-		str[l] = (*f)(l, str[l]);
-		l++;
+		addr = *alst;
+		while (addr->next)
+			addr = addr->next;
+		addr->next = new;
 	}
-	return (str);
 }

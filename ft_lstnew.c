@@ -6,7 +6,7 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 13:04:34 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/11 16:01:45 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:09:05 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 	{
 		new->content = NULL;
 		new->content_size = 0;
-		new->next	= NULL;
+		new->next = NULL;
 	}
 	else
 	{

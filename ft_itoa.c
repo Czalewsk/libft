@@ -6,52 +6,43 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 10:43:54 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/12 12:01:07 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:10:01 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_itoa(int n)
+static	int		ft_int_len(int n)
 {
-	int cpy;
-	int i;
-	char *nb;
+	int		i;
 
 	i = 1;
-	cpy = n;
-	if (cpy < 0)
+	if (n < 0)
 		i++;
-	while (!(cpy > (-10) && cpy < 10))
+	while (!(n > (-10) && n < 10))
 	{
-		cpy /= 10;
+		n /= 10;
 		i++;
 	}
+	return (i);
+}
+
+char			*ft_itoa(int n)
+{
+	int		i;
+	char	*nb;
+
+	i = ft_int_len(n);
 	if (!(nb = ft_strnew(i)))
 		return (NULL);
 	if (n < 0)
-	{
 		nb[0] = '-';
+	else
+		n *= -1;
+	while (i >= 1 && nb[i - 1] != '-')
+	{
 		nb[--i] = -(n % 10) + 48;
 		n /= 10;
 	}
-	nb[--i] = ABS(n % 10) + 48;
-	while (n /= 10 && ABS(n) >= 10)
-		nb[--i] = ABS(n % 10) + 48;
 	return (nb);
-}
-
-int		main(void)
-{
-	int		i;
-	int		n[] = {-2147483647 -1, 7894, -54, -1, -0};
-
-	i = 0;
-	while (i <= 4)
-	{
-		printf("int = %i | itoa = %s\n", n[i], ft_itoa(n[i]));
-		i++;
-	}
-	return (0);
 }

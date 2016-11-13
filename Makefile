@@ -6,7 +6,7 @@
 #    By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 15:04:49 by czalewsk          #+#    #+#              #
-#    Updated: 2016/11/12 11:25:14 by czalewsk         ###   ########.fr        #
+#    Updated: 2016/11/13 12:32:39 by czalewsk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,10 @@ OBJ = ft_strlen.o		\
 	  ft_lstdelone.o	\
 	  ft_lstdel.o		\
 	  ft_lstadd.o		\
-	  ft_itoa.o
+	  ft_itoa.o			\
+	  ft_lstiter.o		\
+	  ft_lst_pushend.o	\
+	  ft_lstmap.o
 
 all : $(NAME)
 

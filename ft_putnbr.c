@@ -6,7 +6,7 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 11:52:38 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/11 12:49:31 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:06:17 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 
 void	ft_putnbr(int n)
 {
+	int n_cp;
+	int i;
+
+	i = 1;
+	n_cp = n;
+	while (!(n_cp > (-10) && n_cp < 10))
+	{
+		n_cp /= 10;
+		i *= 10;
+	}
 	if (n < 0)
-	{
 		ft_putchar('-');
-		ft_putnbr(-(n / 10));
-		ft_putchar(-((n) % 10) + 48);
-	}
-	else if (n > 10)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + 48);
-	}
 	else
-		ft_putchar((n % 10) + 48);
+		n *= -1;
+	while (i >= 1)
+	{
+		ft_putchar(-((n / i) % 10) + 48);
+		i /= 10;
+	}
 }
