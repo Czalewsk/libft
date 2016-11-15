@@ -6,7 +6,7 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 12:10:53 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/13 12:18:50 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:45:37 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lst_pushend(t_list **alst, t_list *new)
 {
 	t_list		*addr;
 
-	if (!new)
+	if (!new || !alst)
 		return ;
 	else if (!(*alst))
 		*alst = new;

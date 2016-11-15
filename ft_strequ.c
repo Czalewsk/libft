@@ -6,7 +6,7 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 20:35:25 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/09 20:49:17 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:29:49 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int		ft_strequ(char const *s1, char const *s2)
 {
 	if (s1 == NULL || s2 == NULL)
 		return (0);
-	return (strcmp(s1, s2) == 0 ? 1 : 0);
+	return (ft_strcmp(s1, s2) == 0 ? 1 : 0);
 }

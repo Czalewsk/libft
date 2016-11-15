@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 19:35:19 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/14 16:47:53 by czalewsk         ###   ########.fr       */
+/*   Created: 2016/11/14 19:51:03 by czalewsk          #+#    #+#             */
+/*   Updated: 2016/11/14 19:54:04 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memdup(const void *mem, size_t size)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-		((unsigned char*)s)[i++] = 0;
+	if (!mem || !size)
+		return (NULL);
+	return (ft_memmove(ft_memalloc(size), mem, size));
 }

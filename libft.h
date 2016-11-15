@@ -6,7 +6,7 @@
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 14:37:53 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/13 14:23:59 by czalewsk         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:13:48 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,8 @@ char			*ft_itoa(int n);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void			ft_lst_pushend(t_list **alst, t_list *new);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+size_t			ft_lstlen(t_list *lst);
+t_list			*ft_lst_newstr(char *str);
+t_list			**ft_strsplit_lst(char const *s, char c);
 
 #endif

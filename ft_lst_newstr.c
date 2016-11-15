@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lst_newstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: czalewsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 19:35:19 by czalewsk          #+#    #+#             */
-/*   Updated: 2016/11/14 16:47:53 by czalewsk         ###   ########.fr       */
+/*   Created: 2016/11/14 17:11:37 by czalewsk          #+#    #+#             */
+/*   Updated: 2016/11/14 18:56:43 by czalewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list		*ft_lst_newstr(char *str)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-		((unsigned char*)s)[i++] = 0;
+	if (!str)
+		return (NULL);
+	return (ft_lstnew(str, (ft_strlen(str) + 1) * sizeof(char)));
 }
